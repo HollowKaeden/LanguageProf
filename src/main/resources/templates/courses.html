@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LanguageProf</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <script src="/js/header.js" defer></script>
+    <link rel="stylesheet" href="/css/courses.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+<div th:insert="~{parts/header :: header}"></div>
+<main>
+    <div th:each="el : ${courses}">
+        <div th:insert="~{parts/course :: course}"></div>
+    </div>
+    <script src="/js/courses.js" defer></script>
+</main>
+<div th:insert="~{parts/footer :: footer}"></div>
+</body>
+</html>

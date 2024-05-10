@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LanguageProf</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <script src="/js/header.js" defer></script>
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/index.js" defer></script>
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+    <div th:insert="~{parts/header :: header}"></div>
+    <main>
+        <div class="parallax"></div>
+        <div>
+            <h1>Изучение языков</h1>
+            <p>Изучение языков помогает расширить кругозор, познакомиться с новыми культурами и улучшить коммуникационные навыки</p>
+            <h1>Зачем нужен этот сайт?</h1>
+            <p>Благодаря этому сайту вы сможете записаться на занятия к профессиональным преподавателям и заниматься в своё удовольствие</p>
+            <p>Приятного пользования!</p>
+        </div>
+    </main>
+    <div th:insert="~{parts/footer :: footer}"></div>
+</body>
+</html>

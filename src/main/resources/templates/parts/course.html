@@ -1,0 +1,17 @@
+<div th:fragment="course" class="course-details">
+    <div>
+        <h2 th:text="${el.name}">Название курса</h2>
+        <img th:src="@{${el.image}}" alt="Изображение курса">
+        <p th:text="${el.description}">Описание курса</p>
+        <p>Цена: <span th:text="${el.price}">0</span> <span>руб.</span></p>
+        <p>Время проведения: <span th:text="${el.date}">0 hours</span></p>
+    </div>
+    <form th:unless="${el.added}" sec:authorize="isAuthenticated()" id="signup_form" action="courses" method="post">
+            <input id="course_id" type="text" style="display: none" name="course_id" th:value="${el.id}">
+            <button id="signup_button" type="submit">Записаться</button>
+    </form>
+    <form th:if="${el.added}" sec:authorize="isAuthenticated()" id="delete_form" action="courses" method="post">
+        <input id="delete_course_id" type="text" style="display: none" name="delete_course_id" th:value="${el.id}">
+        <button id="delete_button" type="submit">Отписаться</button>
+    </form>
+</div>

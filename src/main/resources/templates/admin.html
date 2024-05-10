@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LanguageProf</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <script src="/js/header.js" defer></script>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+<div th:insert="~{parts/header :: header}"></div>
+<main>
+    <section>
+        <h2>Добавить курс</h2>
+        <form id="adminPost">
+            <label for="courseName">Имя курса:</label>
+            <input type="text" id="courseName" name="courseName"><br>
+
+            <label for="courseImage">Ссылка на фото:</label>
+            <input type="text" id="courseImage" name="courseImage"><br>
+
+            <label for="courseDescription">Описание:</label>
+            <textarea id="courseDescription" name="courseDescription"></textarea><br>
+
+            <label for="coursePrice">Цена:</label>
+            <input type="text" id="coursePrice" name="coursePrice"><br>
+
+            <label for="courseDate">Время проведения:</label>
+            <input type="text" id="courseDate" name="courseDate"><br>
+
+            <button type="submit">Добавить курс</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Найти информацию о пользователе по логину</h2>
+        <form id="adminFind" action="admin" method="get">
+            <label for="username">Логин пользователя:</label>
+            <input type="text" id="username" name="username"><br>
+
+            <button type="submit">Найти</button>
+        </form>
+        <p>Почта: <span th:text="${email}">example@example.com</span></p>
+        <p>Телефон: <span th:text="${telnum}">+7(000)000-00-00</span></p>
+    </section>
+
+    <section>
+        <h2>Удалить курс по названию</h2>
+        <form id="adminDelete">
+            <label for="courseDelete">Название курса:</label>
+            <input type="text" id="courseDelete" name="courseDelete"><br>
+
+            <button type="submit">Удалить курс</button>
+        </form>
+    </section>
+    <script src="/js/admin.js" defer></script>
+</main>
+
+<div th:insert="~{parts/footer :: footer}"></div>
+</body>
+</html>

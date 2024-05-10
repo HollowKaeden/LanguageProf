@@ -1,0 +1,17 @@
+<header th:fragment="header">
+    <img class="earth" src="/images/logo.png" alt="Лого сайта" width="80", height="80">
+    <span><a href="index">LanguageProf</a></span>
+    <label>
+        <input type="checkbox" class="checkbox">
+        <span class="menu"> <span class="hamburger"></span> </span>
+        <nav class="navbar">
+            <ul>
+                <li> <a href="courses">Курсы</a> </li>
+                <li sec:authorize="isAuthenticated()"> <a href="my_courses">Мои курсы</a> </li>
+                <li sec:authorize="hasAuthority('ADMIN')"> <a href="admin">Админ-панель</a> </li>
+                <li sec:authorize="isAnonymous()"> <a href="login">Войти</a> </li>
+                <li sec:authorize="isAuthenticated()"> <a href="logout">Выйти</a> </li>
+            </ul>
+        </nav>
+    </label>
+</header>
